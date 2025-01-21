@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeNha79</title>
+    <style>
+        body {
+    background: url('Testing.png') no-repeat center center fixed;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+    padding-top: 20%;
+    font-family: 'Arial', sans-serif;
+    color: white;
+}
+h1 {
+    font-size: 2.5em;
+    color: #ff7f50; /* Màu cam */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Thêm bóng đổ */
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #ff7f50; /* Đổi màu khi focus */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff7f50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff5722; /* Đổi màu khi hover */
+}
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>VD: LE_CONG_MINH</h2>
+    <input type="password" id="password" placeholder="TÊN CỦA BẠN...">
+    <button onclick="checkPassword()">Gửi</button>
+    <script>
+        function checkPassword() {
+            const pass = document.getElementById('password').value;
+    
+            // Danh sách mật mã và giao diện tương ứng
+            const pages = {
+                'LE_TRAN_UYEN_NHI': '<h1>CHÚC MỪNG BẠN ĐÃ LÀ NGƯỜI MAY MẮN</h1><p>ĐỪNG SUY NỮA NHÉ BẠN, NGỦ ĐI RỒI KHI NÀO VUI CHO TỚ XIN 10K =))))</p>',
+                'abcd': '<h1>Chào mừng bạn đến với Trang 2</h1><p>Nội dung trang 2.</p>',
+                '5678': '<h1>Chào mừng bạn đến với Trang 3</h1><p>Nội dung trang 3.</p>'
+            };
+
+             // Danh sách mật mã và ảnh nền tương ứng
+             const backgroundImages = {
+                '1234': 'QRCK.png',
+                'abcd': 'background2.jpg',
+                '5678': 'background3.jpg'
+            };
+
+            // Kiểm tra mật mã
+            if (pages[pass]) {
+                document.body.innerHTML = pages[pass];
+            } else {
+                alert('Mật mã sai, vui lòng thử lại!');
+            };
+
+            // Kiểm tra mật mã và đổi ảnh nền
+            if (backgroundImages[pass]) {
+                document.body.style.backgroundImage = `url('${backgroundImages[pass]}')`;
+                document.querySelector('.container').innerHTML = `<h1>Mật mã đúng!</h1><p>Chào mừng bạn</p>`;
+            } else {
+                alert('Mật mã sai, vui lòng thử lại!');
+            }
+        }
+    </script>    
+</body>
+</html>
